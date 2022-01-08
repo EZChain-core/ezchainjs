@@ -1,6 +1,6 @@
 {
   "name": "ezchainjs2",
-  "version": "3.10.1",
+  "version": "1.0.0-testnet",
   "description": "Avalanche Platform JS Library",
   "main": "dist/index.js",
   "scripts": {
@@ -105,5 +105,6 @@
   "directories": {
     "example": "examples",
     "test": "tests"
-  }
+  },
+  "types": "./dist/index.d.ts"
 }

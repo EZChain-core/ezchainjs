@@ -8,7 +8,7 @@ import { X, P, C, Network, Networks } from "../apis/evm"
 
 export const PrivateKeyPrefix: string = "PrivateKey-"
 export const NodeIDPrefix: string = "NodeID-"
-export const PrimaryAssetAlias: string = "AVAX"
+export const PrimaryAssetAlias: string = "EZC"
 export const MainnetAPI: string = "api.avax.network"
 export const FujiAPI: string = "api.avax-test.network"
 

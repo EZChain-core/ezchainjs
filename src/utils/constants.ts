@@ -360,11 +360,11 @@ export class Defaults {
     1: {
       hrp: NetworkIDToHRP[1],
       X: n1X,
-      "dnu9PBuDAETU5m781cT9EmKceN7VMq95iKSKEssxhDsMYAgXj": n1X,
+      dnu9PBuDAETU5m781cT9EmKceN7VMq95iKSKEssxhDsMYAgXj: n1X,
       P: n1P,
       "11111111111111111111111111111111LpoYY": n1P,
       C: n1C,
-      "cfCABZEHySQ4KuHLUhYDYZokQWL1L5dafrxmR9WdX7i55WEB1": n1C
+      cfCABZEHySQ4KuHLUhYDYZokQWL1L5dafrxmR9WdX7i55WEB1: n1C
     },
     2: {
       hrp: NetworkIDToHRP[2],

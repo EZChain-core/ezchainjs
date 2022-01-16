@@ -14,7 +14,7 @@ export const FujiAPI: string = "api.avax-test.network"
 
 export const NetworkIDToHRP: object = {
   0: "custom",
-  1: "avax",
+  1: "ezc",
   2: "cascade",
   3: "denali",
   4: "everest",
@@ -34,7 +34,7 @@ export const HRPToNetworkID: object = {
 
 export const NetworkIDToNetworkNames: object = {
   0: ["Manhattan"],
-  1: ["Avalanche", "Mainnet"],
+  1: ["EZChain", "Mainnet"],
   2: ["Cascade"],
   3: ["Denali"],
   4: ["Everest"],
@@ -137,9 +137,9 @@ const n0C: C = {
 // End Manhattan
 
 // Start mainnet
-let avaxAssetID: string = "FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z"
+let avaxAssetID: string = "pxpYcmAAUaV4SRXtjWFErFRZ8UPVq4YsnSm5icU3fXLURhxYt"
 const n1X: X = {
-  blockchainID: "2oYMBNV4eNHyqk2fjjV5nVQLDbtmNJzq5s3qs3Lo6ftnC6FByM",
+  blockchainID: "dnu9PBuDAETU5m781cT9EmKceN7VMq95iKSKEssxhDsMYAgXj",
   avaxAssetID: avaxAssetID,
   alias: XChainAlias,
   vm: XChainVMName,
@@ -166,7 +166,7 @@ const n1P: P = {
 }
 
 const n1C: C = {
-  blockchainID: "2q9e4r6Mu3U68nU1fYjgbR6JvwrRx36CohpAX5UQxse55x1Q5",
+  blockchainID: "cfCABZEHySQ4KuHLUhYDYZokQWL1L5dafrxmR9WdX7i55WEB1",
   alias: CChainAlias,
   vm: CChainVMName,
   txBytesGas: 1,
@@ -360,11 +360,11 @@ export class Defaults {
     1: {
       hrp: NetworkIDToHRP[1],
       X: n1X,
-      "2oYMBNV4eNHyqk2fjjV5nVQLDbtmNJzq5s3qs3Lo6ftnC6FByM": n1X,
+      "dnu9PBuDAETU5m781cT9EmKceN7VMq95iKSKEssxhDsMYAgXj": n1X,
       P: n1P,
       "11111111111111111111111111111111LpoYY": n1P,
       C: n1C,
-      "2q9e4r6Mu3U68nU1fYjgbR6JvwrRx36CohpAX5UQxse55x1Q5": n1C
+      "cfCABZEHySQ4KuHLUhYDYZokQWL1L5dafrxmR9WdX7i55WEB1": n1C
     },
     2: {
       hrp: NetworkIDToHRP[2],

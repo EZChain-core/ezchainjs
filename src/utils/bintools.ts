@@ -350,7 +350,7 @@ export default class BinTools {
     }
 
     if (
-      humanReadablePart !== "avax" &&
+      humanReadablePart !== "ezc" &&
       humanReadablePart !== "fuji" &&
       humanReadablePart != "local" &&
       humanReadablePart != hrp

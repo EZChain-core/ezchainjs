@@ -287,9 +287,9 @@ const n4C: C = {
 // End Everest
 
 // Start Fuji
-avaxAssetID = "b6zVkwR9zwMPTE91WpWPcfiELp9SisLfxXRK8JJSE6NNJScAK"
+avaxAssetID = "2hnSEtkBGTb11GJUmeoWUXPC7zSaBG818c1GZc3WtCpbqZQS11"
 const n5X: X = {
-  blockchainID: "2DVxoCB9yUqmvbqCiRT6s7L2XEY4mcxicyJ6m4TN5oNsx6rbAK",
+  blockchainID: "2bUiRRqUr9ZkDAVehjeaM4J8PsW52X2EbuGW1K5e56KZcT6yi7",
   avaxAssetID: avaxAssetID,
   alias: XChainAlias,
   vm: XChainVMName,
@@ -396,7 +396,7 @@ export class Defaults {
     5: {
       hrp: NetworkIDToHRP[5],
       X: n5X,
-      "2DVxoCB9yUqmvbqCiRT6s7L2XEY4mcxicyJ6m4TN5oNsx6rbAK": n5X,
+      "2bUiRRqUr9ZkDAVehjeaM4J8PsW52X2EbuGW1K5e56KZcT6yi7": n5X,
       P: n5P,
       "11111111111111111111111111111111LpoYY": n5P,
       C: n5C,

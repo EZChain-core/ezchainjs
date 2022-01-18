@@ -37,5 +37,5 @@ export interface GetValidatorsAtResponse {
 }
 
 export interface GetTotalOfStakeResponse {
-  totalOfStake: number
+  totalStake: number
 }

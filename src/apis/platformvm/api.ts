@@ -71,8 +71,8 @@ export class PlatformVMAPI extends JRPCAPI {
 
   protected minDelegatorStake: BN = undefined
 
-  protected TotalOfStake: BN = undefined
-
+  protected totalOfStake: BN = undefined
+  
   /**
    * Gets the alias for the blockchainID if it exists, otherwise returns `undefined`.
    *
@@ -976,16 +976,18 @@ export class PlatformVMAPI extends JRPCAPI {
   }
 
   /**
+   * @ignore
    * Gets the total of staked for all addresses.
    */
-  getTotalOfStake = async (): Promise<GetToTalOfStakeResponse> => {
+  getTotalOfStake = async (): Promise<GetTotalOfStakeResponse> => {
     const response: RequestResponseData = await this.callMethod(
-      "platform.TotalOfStake",
+      "platform.getTotalOfStake",
       {}
     )
-    this.TotalOfStake = new BN(response.data.result.totalOfStake, 10)
+    this.totalOfStake = new BN(response.data.result.totalStake, 10)
     return {
-      TotalOfStake: this.TotalOfStake
+      totalStake: response.data.result.totalStake
+    }
   }
 
   /**

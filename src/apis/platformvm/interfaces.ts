@@ -35,3 +35,7 @@ export interface GetValidatorsAtParams {
 export interface GetValidatorsAtResponse {
   validators: object
 }
+
+export interface GetTotalOfStakeResponse {
+  totalOfStake: number
+}

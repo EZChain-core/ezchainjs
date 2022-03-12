@@ -166,7 +166,7 @@ const n1P: P = {
 }
 
 const n1C: C = {
-  blockchainID: "cfCABZEHySQ4KuHLUhYDYZokQWL1L5dafrxmR9WdX7i55WEB1",
+  blockchainID: "ApQXdDnBUBnDLMigPkSk79jkBXKdjNaEhQuGW37URtBkJRfjq",
   alias: CChainAlias,
   vm: CChainVMName,
   txBytesGas: 1,
@@ -179,7 +179,7 @@ const n1C: C = {
   gasPrice: GWEI.mul(new BN(225)),
   minGasPrice: GWEI.mul(new BN(25)),
   maxGasPrice: GWEI.mul(new BN(1000)),
-  chainID: 43114
+  chainID: 2612
 }
 // End Mainnet
 
@@ -364,7 +364,7 @@ export class Defaults {
       P: n1P,
       "11111111111111111111111111111111LpoYY": n1P,
       C: n1C,
-      cfCABZEHySQ4KuHLUhYDYZokQWL1L5dafrxmR9WdX7i55WEB1: n1C
+      ApQXdDnBUBnDLMigPkSk79jkBXKdjNaEhQuGW37URtBkJRfjq: n1C
     },
     2: {
       hrp: NetworkIDToHRP[2],

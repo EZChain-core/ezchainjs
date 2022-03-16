@@ -1,6 +1,6 @@
 {
   "name": "ezchainjs2",
-  "version": "1.0.4-mainnet",
+  "version": "1.0.5-mainnet",
   "description": "Avalanche Platform JS Library",
   "main": "dist/index.js",
   "scripts": {

@@ -72,7 +72,7 @@ export class PlatformVMAPI extends JRPCAPI {
   protected minDelegatorStake: BN = undefined
 
   protected totalOfStake: BN = undefined
-  
+
   /**
    * Gets the alias for the blockchainID if it exists, otherwise returns `undefined`.
    *

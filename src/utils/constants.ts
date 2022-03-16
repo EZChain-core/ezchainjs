@@ -316,7 +316,7 @@ const n5P: P = {
 }
 
 const n5C: C = {
-  blockchainID: "2XNs8nmfB8HdDeHhf41yTd1KQ5md3PBsnz3mvFevtr3DzBAiib",
+  blockchainID: "V2EVDYfeusw3xQu6wTQrC74NfbkEXaQu26y3da9eswQMGzhhv",
   alias: CChainAlias,
   vm: CChainVMName,
   txBytesGas: 1,
@@ -329,7 +329,7 @@ const n5C: C = {
   gasPrice: GWEI.mul(new BN(225)),
   minGasPrice: GWEI.mul(new BN(25)),
   maxGasPrice: GWEI.mul(new BN(1000)),
-  chainID: 43113
+  chainID: 2613
 }
 // End Fuji
 
@@ -400,7 +400,7 @@ export class Defaults {
       P: n5P,
       "11111111111111111111111111111111LpoYY": n5P,
       C: n5C,
-      "2XNs8nmfB8HdDeHhf41yTd1KQ5md3PBsnz3mvFevtr3DzBAiib": n5C
+      "V2EVDYfeusw3xQu6wTQrC74NfbkEXaQu26y3da9eswQMGzhhv": n5C
     },
     12345: {
       hrp: NetworkIDToHRP[12345],

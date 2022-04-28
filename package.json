@@ -1,7 +1,7 @@
 {
-  "name": "ezchainjs2",
-  "version": "1.0.0-testnet",
-  "description": "Avalanche Platform JS Library",
+  "name": "@ezclabs/ezchainjs",
+  "version": "1.0.0",
+  "description": "EZChain JS Library",
   "main": "dist/index.js",
   "scripts": {
     "build": "rm -rf dist/ && npx tsc -b && cp -r typings/src ./dist",
@@ -25,24 +25,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ava-labs/avalanchejs.git"
+    "url": "git+https://github.com/EZChain-core/ezchainjs.git"
   },
   "keywords": [
-    "Avalanche",
+    "EZChain",
     "blockchain",
     "defi"
   ],
-  "author": "Gabriel Cardona <gabriel@avalabs.org>",
+  "author": "EZChain Dev Team <dev@ezchain.com>",
   "contributors": [
-    "Evan Richard <evan@avalabs.org>",
-    "Paul Kim <paul.kim@avalabs.org>",
-    "Dhruba Basu <dhruba@avalabs.org>"
   ],
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/ava-labs/avalanchejs/issues"
+    "url": "https://github.com/EZChain-core/ezchainjs/issues"
   },
-  "homepage": "https://github.com/ava-labs/avalanchejs#readme",
+  "homepage": "https://github.com/EZChain-core/ezchainjs#readme",
   "devDependencies": {
     "@types/bech32": "1.1.4",
     "@types/bn.js": "5.1.0",

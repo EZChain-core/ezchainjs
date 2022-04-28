@@ -8,13 +8,13 @@ import { X, P, C, Network, Networks } from "../apis/evm"
 
 export const PrivateKeyPrefix: string = "PrivateKey-"
 export const NodeIDPrefix: string = "NodeID-"
-export const PrimaryAssetAlias: string = "AVAX"
+export const PrimaryAssetAlias: string = "EZC"
 export const MainnetAPI: string = "api.avax.network"
 export const FujiAPI: string = "api.avax-test.network"
 
 export const NetworkIDToHRP: object = {
   0: "custom",
-  1: "avax",
+  1: "ezc",
   2: "cascade",
   3: "denali",
   4: "everest",
@@ -34,7 +34,7 @@ export const HRPToNetworkID: object = {
 
 export const NetworkIDToNetworkNames: object = {
   0: ["Manhattan"],
-  1: ["Avalanche", "Mainnet"],
+  1: ["EZChain", "Mainnet"],
   2: ["Cascade"],
   3: ["Denali"],
   4: ["Everest"],
@@ -137,9 +137,9 @@ const n0C: C = {
 // End Manhattan
 
 // Start mainnet
-let avaxAssetID: string = "FvwEAhmxKfeiG8SnEvq42hc6whRyY3EFYAvebMqDNDGCgxN5Z"
+let avaxAssetID: string = "2rdddfp8Q8dPd1vLszNBYr4guX1Gs8so9aBkS3bqxL39qKzD39"
 const n1X: X = {
-  blockchainID: "2oYMBNV4eNHyqk2fjjV5nVQLDbtmNJzq5s3qs3Lo6ftnC6FByM",
+  blockchainID: "27zYmr1rRJqf9BFG8nYZYxeRdn1mXYwqkNVp4oSDg1ZtCZQTGi",
   avaxAssetID: avaxAssetID,
   alias: XChainAlias,
   vm: XChainVMName,
@@ -166,7 +166,7 @@ const n1P: P = {
 }
 
 const n1C: C = {
-  blockchainID: "2q9e4r6Mu3U68nU1fYjgbR6JvwrRx36CohpAX5UQxse55x1Q5",
+  blockchainID: "ApQXdDnBUBnDLMigPkSk79jkBXKdjNaEhQuGW37URtBkJRfjq",
   alias: CChainAlias,
   vm: CChainVMName,
   txBytesGas: 1,
@@ -179,7 +179,7 @@ const n1C: C = {
   gasPrice: GWEI.mul(new BN(225)),
   minGasPrice: GWEI.mul(new BN(25)),
   maxGasPrice: GWEI.mul(new BN(1000)),
-  chainID: 43114
+  chainID: 2612
 }
 // End Mainnet
 
@@ -287,9 +287,9 @@ const n4C: C = {
 // End Everest
 
 // Start Fuji
-avaxAssetID = "b6zVkwR9zwMPTE91WpWPcfiELp9SisLfxXRK8JJSE6NNJScAK"
+avaxAssetID = "2hnSEtkBGTb11GJUmeoWUXPC7zSaBG818c1GZc3WtCpbqZQS11"
 const n5X: X = {
-  blockchainID: "2DVxoCB9yUqmvbqCiRT6s7L2XEY4mcxicyJ6m4TN5oNsx6rbAK",
+  blockchainID: "2bUiRRqUr9ZkDAVehjeaM4J8PsW52X2EbuGW1K5e56KZcT6yi7",
   avaxAssetID: avaxAssetID,
   alias: XChainAlias,
   vm: XChainVMName,
@@ -316,7 +316,7 @@ const n5P: P = {
 }
 
 const n5C: C = {
-  blockchainID: "2XNs8nmfB8HdDeHhf41yTd1KQ5md3PBsnz3mvFevtr3DzBAiib",
+  blockchainID: "V2EVDYfeusw3xQu6wTQrC74NfbkEXaQu26y3da9eswQMGzhhv",
   alias: CChainAlias,
   vm: CChainVMName,
   txBytesGas: 1,
@@ -329,7 +329,7 @@ const n5C: C = {
   gasPrice: GWEI.mul(new BN(225)),
   minGasPrice: GWEI.mul(new BN(25)),
   maxGasPrice: GWEI.mul(new BN(1000)),
-  chainID: 43113
+  chainID: 2613
 }
 // End Fuji
 
@@ -360,11 +360,11 @@ export class Defaults {
     1: {
       hrp: NetworkIDToHRP[1],
       X: n1X,
-      "2oYMBNV4eNHyqk2fjjV5nVQLDbtmNJzq5s3qs3Lo6ftnC6FByM": n1X,
+      "27zYmr1rRJqf9BFG8nYZYxeRdn1mXYwqkNVp4oSDg1ZtCZQTGi": n1X,
       P: n1P,
       "11111111111111111111111111111111LpoYY": n1P,
       C: n1C,
-      "2q9e4r6Mu3U68nU1fYjgbR6JvwrRx36CohpAX5UQxse55x1Q5": n1C
+      ApQXdDnBUBnDLMigPkSk79jkBXKdjNaEhQuGW37URtBkJRfjq: n1C
     },
     2: {
       hrp: NetworkIDToHRP[2],
@@ -396,11 +396,11 @@ export class Defaults {
     5: {
       hrp: NetworkIDToHRP[5],
       X: n5X,
-      "2DVxoCB9yUqmvbqCiRT6s7L2XEY4mcxicyJ6m4TN5oNsx6rbAK": n5X,
+      "2bUiRRqUr9ZkDAVehjeaM4J8PsW52X2EbuGW1K5e56KZcT6yi7": n5X,
       P: n5P,
       "11111111111111111111111111111111LpoYY": n5P,
       C: n5C,
-      "2XNs8nmfB8HdDeHhf41yTd1KQ5md3PBsnz3mvFevtr3DzBAiib": n5C
+      V2EVDYfeusw3xQu6wTQrC74NfbkEXaQu26y3da9eswQMGzhhv: n5C
     },
     12345: {
       hrp: NetworkIDToHRP[12345],

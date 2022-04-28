@@ -32,7 +32,8 @@ import {
   GetStakeParams,
   GetStakeResponse,
   GetValidatorsAtParams,
-  GetValidatorsAtResponse
+  GetValidatorsAtResponse,
+  GetTotalOfStakeResponse
 } from "./interfaces"
 import { TransferableOutput } from "./outputs"
 import { Serialization, SerializedType } from "../../utils"
@@ -69,6 +70,8 @@ export class PlatformVMAPI extends JRPCAPI {
   protected minValidatorStake: BN = undefined
 
   protected minDelegatorStake: BN = undefined
+
+  protected totalOfStake: BN = undefined
 
   /**
    * Gets the alias for the blockchainID if it exists, otherwise returns `undefined`.
@@ -969,6 +972,21 @@ export class PlatformVMAPI extends JRPCAPI {
           return transferableOutput
         }
       )
+    }
+  }
+
+  /**
+   * @ignore
+   * Gets the total of staked for all addresses.
+   */
+  getTotalOfStake = async (): Promise<GetTotalOfStakeResponse> => {
+    const response: RequestResponseData = await this.callMethod(
+      "platform.getTotalOfStake",
+      {}
+    )
+    this.totalOfStake = new BN(response.data.result.totalStake, 10)
+    return {
+      totalStake: response.data.result.totalStake
     }
   }
 

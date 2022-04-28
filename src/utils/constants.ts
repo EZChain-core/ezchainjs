@@ -137,9 +137,9 @@ const n0C: C = {
 // End Manhattan
 
 // Start mainnet
-let avaxAssetID: string = "pxpYcmAAUaV4SRXtjWFErFRZ8UPVq4YsnSm5icU3fXLURhxYt"
+let avaxAssetID: string = "2rdddfp8Q8dPd1vLszNBYr4guX1Gs8so9aBkS3bqxL39qKzD39"
 const n1X: X = {
-  blockchainID: "dnu9PBuDAETU5m781cT9EmKceN7VMq95iKSKEssxhDsMYAgXj",
+  blockchainID: "27zYmr1rRJqf9BFG8nYZYxeRdn1mXYwqkNVp4oSDg1ZtCZQTGi",
   avaxAssetID: avaxAssetID,
   alias: XChainAlias,
   vm: XChainVMName,
@@ -360,7 +360,7 @@ export class Defaults {
     1: {
       hrp: NetworkIDToHRP[1],
       X: n1X,
-      dnu9PBuDAETU5m781cT9EmKceN7VMq95iKSKEssxhDsMYAgXj: n1X,
+      "27zYmr1rRJqf9BFG8nYZYxeRdn1mXYwqkNVp4oSDg1ZtCZQTGi": n1X,
       P: n1P,
       "11111111111111111111111111111111LpoYY": n1P,
       C: n1C,
@@ -400,7 +400,7 @@ export class Defaults {
       P: n5P,
       "11111111111111111111111111111111LpoYY": n5P,
       C: n5C,
-      "V2EVDYfeusw3xQu6wTQrC74NfbkEXaQu26y3da9eswQMGzhhv": n5C
+      V2EVDYfeusw3xQu6wTQrC74NfbkEXaQu26y3da9eswQMGzhhv: n5C
     },
     12345: {
       hrp: NetworkIDToHRP[12345],

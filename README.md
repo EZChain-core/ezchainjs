@@ -1,8 +1,8 @@
-# AvalancheJS - The Avalanche Platform JavaScript Library
+# EZChainJS - The EZChain Platform JavaScript Library
 
 ## Overview
 
-AvalancheJS is a JavaScript Library for interfacing with the Avalanche Platform. It is built using TypeScript and intended to support both browser and Node.js. The AvalancheJS library allows you to issue commands to the Avalanche node APIs.
+EZChainJS is a JavaScript Library for interfacing with the EZChain Platform. It is built using TypeScript and intended to support both browser and Node.js. The EZChainJS library allows you to issue commands to the EZChain node APIs.
 
 The APIs currently supported by default are:
 
@@ -16,9 +16,9 @@ The APIs currently supported by default are:
 * Metrics API
 * PlatformVM API (P-Chain)
 
-We built AvalancheJS with ease of use in mind. With this library, any Javascript developer is able to interact with a node on the Avalanche Platform who has enabled their API endpoints for the developer's consumption. We keep the library up-to-date with the latest changes in the [Avalanche Platform Specification](https://docs.avax.network).
+We built EZChainJS with ease of use in mind. With this library, any Javascript developer is able to interact with a node on the EZChain Platform who has enabled their API endpoints for the developer's consumption. We keep the library up-to-date with the latest changes in the [EZChain Platform Specification](https://docs.ezchain.com).
 
-  Using AvalancheJS, developers can:
+  Using EZChainJS, developers can:
 
 * Locally manage private keys
 * Retrieve balances on addresses
@@ -26,66 +26,66 @@ We built AvalancheJS with ease of use in mind. With this library, any Javascript
 * Build and sign transactions
 * Issue signed transactions to the X-Chain, P-Chain, and C-Chain
 * Perform cross-chain swaps between the X-Chain<->P-Chain and between the X-Chain<->C-Chain
-* Add Validators and Delegators to the Primary Subnetwork by staking AVAX
+* Add Validators and Delegators to the Primary Subnetwork by staking EZC
 * Create a Subnetwork
 * Administer a local node
-* Retrieve Avalanche network information from a node
+* Retrieve EZChain network information from a node
 
 ### Requirements
 
-AvalancheJS requires Node.js LTS version 14.16.0 or higher to compile.
+EZChainJS requires Node.js LTS version 14.16.0 or higher to compile.
 
 ### Installation
 
-Avalanche is available for install via `yarn`:
+EZChain is available for install via `yarn`:
 
-`yarn add avalanche`
+`yarn add @ezclabs/ezchainjs`
 
 You can also pull the repo down directly and build it from scratch:
 
 `yarn build`
 
-This will generate a pure Javascript library and place it in a folder named "web" in the project root. The "avalanche.js" file can then be dropped into any project as a pure javascript implementation of Avalanche.
+This will generate a pure Javascript library and place it in a folder named "web" in the project root. The "ezchain.js" file can then be dropped into any project as a pure javascript implementation of EZChain.
 
-The AvalancheJS library can be imported into your existing Node.js project as follows:
+The EZChainJS library can be imported into your existing Node.js project as follows:
 
 ```js
-const avalanche = require("avalanche")
+const ezchainjs = require("@ezclabs/ezchainjs")
 ```
 
 Or into your TypeScript project like this:
 
 ```js
-import { Avalanche } from "avalanche"
+import { Avalanche } from "@ezclabs/ezchainjs"
 ```
 
 ### Importing essentials
 
 ```js
-import { Avalanche, BinTools, BN, Buffer } from "avalanche"
+import { Avalanche, BinTools, BN, Buffer } from "@ezclabs/ezchainjs"
 
 const bintools = BinTools.getInstance()
 ```
 
 The above lines import the libraries used in the tutorials. The libraries include:
 
-* Avalanche: Our javascript module.
-* BinTools: A singleton built into AvalancheJS that is used for dealing with binary data.
-* [BN](https://www.npmjs.com/package/bn.js): A bignumber module use by AvalancheJS.
+* EZChain: Our javascript module.
+* BinTools: A singleton built into EZChainJS that is used for dealing with binary data.
+* [BN](https://www.npmjs.com/package/bn.js): A bignumber module use by EZChainJS.
 * [Buffer](https://www.npmjs.com/package/buffer): A Buffer library.
 
 ## Example 1 &mdash; Managing X-Chain Keys
 
-AvalancheJS comes with its own AVM Keychain. This KeyChain is used in the functions of the API, enabling them to sign using keys it's registered. The first step in this process is to create an instance of AvalancheJS connected to our Avalanche Platform endpoint of choice.
+EZChainJS comes with its own AVM Keychain. This KeyChain is used in the functions of the API, enabling them to sign using keys it's registered. The first step in this process is to create an instance of EZChainJS connected to our EZChain Platform endpoint of choice.
 
 ```js
-import { Avalanche, BinTools, Buffer, BN } from "avalanche"
+import { Avalanche, BinTools, Buffer, BN } from "@ezclabs/ezchainjs"
 
 const bintools = BinTools.getInstance()
 
 const myNetworkID = 12345 //default is 1, we want to override that for our local network
-const avalanche = new Avalanche("localhost", 9650, "http", myNetworkID)
-const xchain = avalanche.XChain() //returns a reference to the X-Chain used by AvalancheJS
+const ezchainjs = new Avalanche("localhost", 9650, "http", myNetworkID)
+const xchain = ezchainjs.XChain() //returns a reference to the X-Chain used by EZChainJS
 ```
 
 ### Accessing the KeyChain
@@ -163,20 +163,20 @@ const isValid = keypair.verify(message, signature) // returns a boolean
 
 ## Example 2 &mdash; Creating An Asset
 
-This example creates an asset in the X-Chain and publishes it to the Avalanche Platform. The first step in this process is to create an instance of AvalancheJS connected to our Avalanche Platform endpoint of choice.
+This example creates an asset in the X-Chain and publishes it to the EZChain Platform. The first step in this process is to create an instance of EZChainJS connected to our EZChain Platform endpoint of choice.
 
 ```js
-import { Avalanche, BinTools, Buffer, BN } from "avalanche"
-import { InitialStates, SECPTransferOutput } from "avalanche/dist/apis/avm"
+import { Avalanche, BinTools, Buffer, BN } from "@ezclabs/ezchainjs"
+import { InitialStates, SECPTransferOutput } from "@ezclabs/ezchainjs/dist/apis/avm"
 
 const myNetworkID = 12345 // default is 1, we want to override that for our local network
-const avalanche = new Avalanche("localhost", 9650, "http", myNetworkID)
-const xchain = avalanche.XChain() // returns a reference to the X-Chain used by AvalancheJS
+const ezchainjs = new Avalanche("localhost", 9650, "http", myNetworkID)
+const xchain = ezchainjs.XChain() // returns a reference to the X-Chain used by EZChainJS
 ```
 
 ### Describe the new asset
 
-The first steps in creating a new asset using AvalancheJS is to determine the qualities of the asset. We will give the asset a name, a ticker symbol, as well as a denomination.
+The first steps in creating a new asset using EZChainJS is to determine the qualities of the asset. We will give the asset a name, a ticker symbol, as well as a denomination.
 
 ```js
 // Name our new coin and give it a symbol
@@ -184,7 +184,7 @@ const name = "TeamRocket"
 const symbol = "ROKT"
 
 // Where is the decimal point indicate what 1 asset is and where fractional assets begin
-// Ex: 1 AVAX is denomination 9, so the smallest unit of AVAX is nanoAVAX (nAVAX) at 10^-9 AVAX
+// Ex: 1 EZC is denomination 9, so the smallest unit of EZC is nanoEZC (nEZC) at 10^-9 EZC
 const denomination = 9
 ```
 
@@ -245,7 +245,7 @@ const signed = unsigned.sign(xchain) // returns a Tx class
 
 Now that we have a signed transaction ready to send to the network, let's issue it!
 
-Using the AvalancheJS X-Chain API, we going to call the `issueTx` function. This function can take either the Tx class returned in the previous step, a CB58 representation of the transaction, or a raw Buffer class with the data for the transaction. Examples of each are below:
+Using the EZChainJS X-Chain API, we going to call the `issueTx` function. This function can take either the Tx class returned in the previous step, a CB58 representation of the transaction, or a raw Buffer class with the data for the transaction. Examples of each are below:
 
 ```js
 // using the Tx class
@@ -286,19 +286,19 @@ The X-Chain uses the TxID of the transaction which created the asset as the uniq
 
 ## Example 3 &mdash; Sending An Asset
 
-This example sends an asset in the X-Chain to a single recipient. The first step in this process is to create an instance of Avalanche connected to our Avalanche Platform endpoint of choice.
+This example sends an asset in the X-Chain to a single recipient. The first step in this process is to create an instance of EZChain connected to our EZChain Platform endpoint of choice.
 
 ```js
-import { Avalanche, BinTools, Buffer, BN } from "avalanche"
+import { Avalanche, BinTools, Buffer, BN } from "@ezclabs/ezchainjs"
 
 const myNetworkID = 12345 // default is 1, we want to override that for our local network
-const avalanche = new avalanche.Avalanche(
+const ezchainjs = new @ezclabs/ezchainjs.Avalanche(
   "localhost",
   9650,
   "http",
   myNetworkID
 )
-const xchain = avalanche.XChain() // returns a reference to the X-Chain used by AvalancheJS
+const xchain = ezchainjs.XChain() // returns a reference to the X-Chain used by EZChainJS
 ```
 
 We're also assuming that the keystore contains a list of addresses used in this transaction.
@@ -331,7 +331,7 @@ We have 400 coins! We're going to now send 100 of those coins to our friend's ad
 
 ```js
 const sendAmount = new BN(100) // amounts are in BN format
-const friendsAddress = "X-avax1k26jvfdzyukms95puxcceyzsa3lzwf5ftt0fjk" // address format is Bech32
+const friendsAddress = "X-ezc1k26jvfdzyukms95puxcceyzsa3lzwf5ftt0fjk" // address format is Bech32
 
 // The below returns a UnsignedTx
 // Parameters sent are (in order of appearance):
@@ -386,17 +386,17 @@ if (newBalance.toNumber() != mybalance.sub(sendAmount).toNumber()) {
 }
 ```
 
-## Creating a new AvalancheJS build
+## Creating a new EZChainJS build
 
-First, all changes to the `master` branch of the AvalancheJS repo should be done solely via github pull requests. This is to ensure that only code which has been peer-reviewed ends up in `master`. Next, you need your username added to the [`avalanche` npm package](https://www.npmjs.com/package/avalanche) and also confirm that you enable 2fa on your npm account.
+First, all changes to the `main` branch of the EZChainJS repo should be done solely via github pull requests. This is to ensure that only code which has been peer-reviewed ends up in `main`. Next, you need your username added to the [`ezchainjs` npm package](https://www.npmjs.com/package/@ezclabs/ezchainjs) and also confirm that you enable 2fa on your npm account.
 
-After all the desired changes have been peer-reviewed and merged into the `development` branch then create a final PR to merge `development` in to `master`. Name the PR the new AvalancheJS version name. Ex: `v3.0.4`. In the description list a changelog of the changes which are included in the PR.
+After all the desired changes have been peer-reviewed and merged into the `development` branch then create a final PR to merge `development` in to `main`. Name the PR the new EZChainJS version name. Ex: `v3.0.4`. In the description list a changelog of the changes which are included in the PR.
 
-When you merge the PR and the latest and greatest are on the `master` branch then run `yarn release:prepare`. This command removes the existing `dist/` and `node_modules/` directories in addition to removing the `yarn.lock` file. Next it installs the dependencies, builds AvalancheJS, bundles the build with webpack and runs the test suite. If all of this is successful then you are ready to push a new build to npm.
+When you merge the PR and the latest and greatest are on the `main` branch then run `yarn release:prepare`. This command removes the existing `dist/` and `node_modules/` directories in addition to removing the `yarn.lock` file. Next it installs the dependencies, builds EZChainJS, bundles the build with webpack and runs the test suite. If all of this is successful then you are ready to push a new build to npm.
 
 For this we use the [`np` lib](https://www.npmjs.com/package/np) to push a new build to npm. `np` will prompt you to answer if this is a PATCH, MINOR or MAJOR release and it will handle bumping the version in `package.json` for you. You will be prompted for your `OTP` which stands for "one time password." This is your 2fa code which you will get from having enabled 2fa on your npm account.
 
-After this is successful you can confirm that the version number was bumped for the npm [`avalanche` npm package](https://www.npmjs.com/package/avalanche). Once you confirm that then the final step is to merge `master` in to the `development` branch. This ensures that the newly bumped version gets added to any future dev work which branches off of `development`.
+After this is successful you can confirm that the version number was bumped for the npm [`ezchainjs` npm package](https://www.npmjs.com/package/@ezclabs/ezchainjs). Once you confirm that then the final step is to merge `master` in to the `development` branch. This ensures that the newly bumped version gets added to any future dev work which branches off of `development`.
 
 ### Repo Dependency Updates
 
@@ -410,7 +410,7 @@ yarn build && yarn test
 ```
 
 If the E2E check does not pass, go into the 'checks' section of the PR.
-`https://github.com/ava-labs/avalanchejs/pull/<PR number>/checks`
+`https://github.com/EZChain-core/ezchainjs/pull/<PR number>/checks`
 
 * Click on the `> E2E` tab on the left
 * Click 'Re-run jobs' on the right
